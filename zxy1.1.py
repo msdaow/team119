@@ -3,13 +3,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 
-# 从CSV文件读取数据
-# 假设CSV文件有两列：x和y
-data = pd.read_csv('train.csv')  # 请将'data.csv'替换为你的实际文件名
+
+data = pd.read_csv('train.csv')
 
 # 数据清洗：去除空值和异常值
 data = data.dropna()  # 删除空值
-data = data[(data['x'] > 0) & (data['y'] > 0)]  # 假设x和y都是正数，根据实际情况调整
+data = data[(data['x'] > 0) & (data['y'] > 0)]
 
 # 准备数据集
 x_data = data['x'].values
@@ -36,9 +35,9 @@ w_list = []
 b_list = []
 mse_list = []
 
-# 尝试计算w和b取不同值时的损失值
-# 这里我们固定b=1，只变化w，以便于可视化
-# 在实际应用中，你需要同时优化w和b
+# 计算w和b取不同值时的损失值
+# 固定b=1，只变化w，以便于可视化
+
 b_fixed = 1.0  # 固定偏置项
 
 for w in np.arange(0.0, 4.1, 0.1):
