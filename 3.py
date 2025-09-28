@@ -87,7 +87,7 @@ def plot_loss_relationship(w_space, b_space, loss_matrix, best_w, best_b):
 
 # 读取数据集
 # 注意：如果在平台运行，需要修改为 '/mnt/train.csv'
-df = pd.read_csv('train.csv')
+df = pd.read_csv('F:/MobileFile/train.csv')
 
 # 使用均值填充 y 列的缺失值
 df['y'] = df['y'].fillna(df['y'].mean())
